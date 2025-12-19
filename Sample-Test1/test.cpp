@@ -15,12 +15,12 @@ std::vector<double> arraySumModifier(std::vector<double>& arr) {
     int n = arr.size();
     std::vector<double> sums;
 
-    // Вычисляем суммы пар элементов
+    // Calculate the sums of pairs of elements
     for (int i = 0; i < n / 2; ++i) {
         sums.push_back(arr[i] + arr[n - 1 - i]);
     }
 
-    // Умножаем центральный элемент на 2 если массив нечетный и добавим в массив сумм
+    // Multiply the central element by 2 if the array is odd and add it to the sum array
     if (n % 2 != 0) {
         int centralIndex = n / 2;
         arr[centralIndex] *= 2;
@@ -34,7 +34,7 @@ std::vector<double> arraySumModifier(std::vector<double>& arr) {
 
 double arrayMaxFinder(std::vector<double>& sums) {
 
-    // Поиск максимума среди сумм
+    // Finding the maximum among sums
     double maxSum = std::numeric_limits<double>::lowest();
     for (double sum : sums) {
         if (sum > maxSum) {
